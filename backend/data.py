@@ -1,5 +1,3 @@
-# Simple in-memory storage
-
 USERS = {}          # username -> {public_key, private_key}
 CONNECTIONS = {}    # username -> websocket
 
@@ -23,3 +21,4 @@ def get_private_key(username):
 
 def get_users():
     return USERS.keys()
+

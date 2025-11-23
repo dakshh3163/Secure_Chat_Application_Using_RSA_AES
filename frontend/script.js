@@ -29,12 +29,19 @@ function sendMsg() {
     const chat = document.getElementById("chat");
     chat.innerHTML += `<div><b>Me -> ${target}:</b> ${text}</div>`;
     chat.scrollTop = chat.scrollHeight;
+    let div = document.getElementById("chat");
+    div.scrollTop = div.scrollHeight;
 
     ws.send(JSON.stringify({
         to: target,
         message: text
     }));
 }
+document.getElementById("msg").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        sendMsg();
+    }
+});
 
 
 
